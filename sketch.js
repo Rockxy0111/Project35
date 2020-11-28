@@ -97,7 +97,7 @@ if (gameState!="Hungry") {
 drawSprites();
 textSize(16)
 currentTime=hour();
-if (keyDown(UP_ARROW)) {
+if (currentTime==(lastFed+1)) {
     foodObj.Garden();
     update("Playing")
     
