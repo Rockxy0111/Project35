@@ -66,23 +66,7 @@ text("Name Your Pet",634,39)
 foodObj.display();
 
 
-textSize(16)
-currentTime=hour();
-if (currentTime==(lastFed+1)) {
-    foodObj.Garden();
-    update("Playing")
-    
-}else if (currentTime==(lastFed+2)) {
-      foodObj.Bedroom();
-    update("Sleeping")
-}else if(currentTime>(lastFed+2)&&currentTime<(lastFed+4)) {
-    foodObj.Washroom();
-    update("Bathing")
-}else{
-    foodObj.display();
-    update("Hungry")
-    
-}
+
 
 textSize(16)
 if (lastFed>=12) {
@@ -111,7 +95,23 @@ if (gameState!="Hungry") {
 
 
 drawSprites();
-
+textSize(16)
+currentTime=hour();
+if (keyDown) {
+    foodObj.Garden();
+    update("Playing")
+    
+}else if (currentTime==(lastFed+2)) {
+      foodObj.Bedroom();
+    update("Sleeping")
+}else if(currentTime>(lastFed+2)&&currentTime<(lastFed+4)) {
+    foodObj.Washroom();
+    update("Bathing")
+}else{
+    foodObj.display();
+    update("Hungry")
+    
+}
 
 }
 
